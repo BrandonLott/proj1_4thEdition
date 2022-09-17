@@ -32,6 +32,7 @@ public class ProductService {
     public List<Product> getAllProductByPrice(double price){
         return pr.getAllProductByPrice(price);
     }
+    //need to look into how int pid can be used to uniquely identify a product even though it is an auto generated number
     public void addProduct(String name, String type, int quantity, double price, int pid){
         Product existingProduct = pr.getProductByID(pid);
         if(existingProduct == null) {
