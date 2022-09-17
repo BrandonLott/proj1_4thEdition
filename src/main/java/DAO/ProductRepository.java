@@ -4,10 +4,7 @@ package DAO;
 import Model.Product;
 import Util.ConnectionUtil;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,7 +35,22 @@ public class ProductRepository {
         return allProducts ;
     }
     public List<Product> getAllProductByName(String name){
-        return null;
+        List<Product> allProducts = new ArrayList<>();
+        try{
+            PreparedStatement statement = conn.prepareStatement("SELECT * FROM LevelUpDB.dbo.Products WHERE Product_Name = ?");
+            statement.setString(1, name);
+
+            ResultSet rs = statement.executeQuery();
+
+            while (rs.next()){
+                Product loadedProduct = new Product(rs.getString("Product_Name"),rs.getString("Product_Type"), rs.getInt("Qty"),  rs.getDouble("Price"),rs.getInt("Product_ID") );
+                allProducts.add(loadedProduct);
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
+        return allProducts ;
     }
 
     public List<Product> getAllProductByType(String type){

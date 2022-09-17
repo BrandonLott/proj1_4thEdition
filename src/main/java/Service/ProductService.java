@@ -11,7 +11,10 @@ public class ProductService {
     //What can this do? first this service will work with a repository to access our back end SQL database for our store
     //also we can provide extra steps to our information gathered be the repository class here in the service class
     ProductRepository pr;
-    public ProductService(){
+
+    //pruduct service constructor that allows the usage of getters
+    public ProductService()
+    {
         pr = new ProductRepository();
     }
     //set up a service layer to get an array of all available products from SQL database
