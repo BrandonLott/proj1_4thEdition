@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df1c5440-84a3-491d-bc43-2705671f7748" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ShopAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ChickenShopMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ChickenShopMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAO/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Service/ProductService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +52,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.ShopAPI">
     <configuration name="ChickenShopMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ChickenShopMenu" />
       <module name="ChickenStore.main" />
@@ -57,8 +60,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ShopAPI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ShopAPI" />
+      <module name="ChickenStore.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ShopAPI" />
         <item itemvalue="Application.ChickenShopMenu" />
       </list>
     </recent_temporary>

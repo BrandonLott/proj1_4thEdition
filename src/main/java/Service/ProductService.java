@@ -1,10 +1,13 @@
 package Service;
 //import the database Access Object
 import DAO.ProductRepository;
+//^^ this brings in our object that can access the SQL database(backend)
 import Model.Product;
 
 import java.util.List;
-//^^ this brings in our object that can access the SQL database(backend)
+
+
+
 
 
 public class ProductService {
@@ -36,11 +39,18 @@ public class ProductService {
         return pr.getAllProductByPrice(price);
     }
     //need to look into how int pid can be used to uniquely identify a product even though it is an auto generated number
-    public void addProduct(int pid, String name, String type, int quantity, double price){
-        Product existingProduct = pr.getProductByID(pid);
+    public void addProduct(Product p){
+
+        Product existingProduct = pr.getProductByName(p.getName());
+
         if(existingProduct == null) {
-            pr.addProduct();
+           Product newProduct = new Product(p.getName(), p.getType(), p.getQuantity(), p.getPrice(), p.getPid());
+            pr.addProduct(newProduct);
         }
+    }
+    public Product getProductByID(int pid){
+
+        return pr.getProductByID(pid);
     }
 
 }

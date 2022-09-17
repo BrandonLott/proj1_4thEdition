@@ -7,6 +7,10 @@ public class Product {
     private int quantity;
     private double price;
 
+    public Product() {
+
+    }
+
     @Override
     public String toString() {
         return "Product{" +

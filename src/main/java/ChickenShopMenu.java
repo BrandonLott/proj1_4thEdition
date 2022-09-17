@@ -2,6 +2,7 @@ import Model.Product;
 import Service.ProductService;
 import Util.ConnectionUtil;
 
+import javax.management.StringValueExp;
 import java.io.BufferedReader;
 import java.sql.Connection;
 import java.util.Scanner;
@@ -38,12 +39,17 @@ public class ChickenShopMenu {
                      //variable breed to grab the breed from user
                         String breed = recieve.nextLine();
                         // breed sent to ps.getAllProductsByName() so that the users input can be used in that method of that class to find stuff in the database
-                        System.out.println(ps.getAllProductByName(breed));
-                    } else if (selection.equals("Type")) {
+                        for (int i = 0; i < ps.getAllProductByName(breed).size(); i++) {
+                            System.out.println(ps.getAllProductByName(breed).get(i));
+                        }
+                    } else if (selection.equals("Price")) {
+                        System.out.println("What Type of Product are you looking for?");
                    //variable aType added to allow user to put in a type of product
                         String aType = recieve.nextLine();
                         //aType assigned by the user gets sent to ps.getAll....
-                        System.out.println(ps.getAllProductByType(aType));
+                        for (int i = 0; i < ps.getAllProductByPrice(Double.parseDouble(aType)).size(); i++) {
+                            System.out.println(ps.getAllProductByPrice(Double.parseDouble(aType)).get(i));
+                        }
                     } else if (selection.equals("Stop")) {
                         System.out.println("You selected Stop");
                         look = false;
@@ -58,8 +64,8 @@ public class ChickenShopMenu {
                 int quantity = recieve.nextInt();
                 String Garbage = recieve.nextLine();
                 double price = recieve.nextDouble();
-                int pid = 0;
-                ps.addProduct(pid, name,type,quantity,price);
+
+               // ps.addProduct(name,type,quantity,price);
             }
             else{
 

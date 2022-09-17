@@ -1,9 +1,7 @@
 //These are Database Access Objects they can reach the backend and grab from SQL database
 package DAO;
-
 import Model.Product;
 import Util.ConnectionUtil;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -49,21 +47,103 @@ public class ProductRepository {
         }catch (SQLException e){
             e.printStackTrace();
         }
-
-        return allProducts ;
+        if (allProducts.size() == 0){
+            return null;
+        }else {
+            return allProducts;
+        }
     }
 
     public List<Product> getAllProductByType(String type){
-        return null;
+        List<Product> allProducts = new ArrayList<>();
+        try{
+            PreparedStatement statement = conn.prepareStatement("SELECT * FROM LevelUpDB.dbo.Products WHERE Product_Type = ?");
+            statement.setString(1, type);
+
+            ResultSet rs = statement.executeQuery();
+
+            while (rs.next()){
+                Product loadedProduct = new Product(rs.getString("Product_Name"),rs.getString("Product_Type"), rs.getInt("Qty"),  rs.getDouble("Price"),rs.getInt("Product_ID") );
+                allProducts.add(loadedProduct);
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        if (allProducts.size() == 0){
+            return null;
+        }else {
+            return allProducts;
+        }
     }
 
     public List<Product> getAllProductByPrice(double price){
-        return null;
+        List<Product> allProducts = new ArrayList<>();
+        try{
+            PreparedStatement statement = conn.prepareStatement("SELECT * FROM LevelUpDB.dbo.Products WHERE Price < ?");
+            statement.setString(1, String.valueOf(price));
+
+            ResultSet rs = statement.executeQuery();
+
+            while (rs.next()){
+                Product loadedProduct = new Product(rs.getString("Product_Name"),rs.getString("Product_Type"), rs.getInt("Qty"),  rs.getDouble("Price"),rs.getInt("Product_ID") );
+                allProducts.add(loadedProduct);
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        if (allProducts.size() == 0){
+            return null;
+        }else {
+            return allProducts;
+        }
     }
-    public void addProduct(){
+    public void addProduct(Product a){
+        List<Product> product = new ArrayList<>();
+        try{
+            PreparedStatement statement = conn.prepareStatement("INSERT INTO LevelUpDB.dbo.Products( Product_Name, Product_Type, Qty, Price)VALUES(?,?,?,?)");
+
+            statement.setString(1,a.getName());
+            statement.setString(2,a.getType());
+            statement.setInt(3,a.getQuantity());
+            statement.setDouble(4, a.getPrice());
+            statement.executeUpdate();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
 
     }
     public Product getProductByID(int pid){
+        try{
+            PreparedStatement statement = conn.prepareStatement("SELECT * FROM LevelUpDB.dbo.Products WHERE Product_ID = ?");
+            statement.setInt(1, pid);
+            ResultSet rs = statement.executeQuery();
+            //if return 0 results null, if return at least one, run product loadedProduct line.
+            if(rs.next()) {
+                Product loadedProduct = new Product(rs.getString("Product_Name"), rs.getString("Product_Type"), rs.getInt("Qty"), rs.getDouble("Price"), rs.getInt("Product_ID"));
+                //and return what we recieved from the database
+                return loadedProduct;
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
         return null;
     }
+
+    public Product getProductByName(String name) {
+        try{
+            PreparedStatement statement = conn.prepareStatement("SELECT * FROM LevelUpDB.dbo.Products WHERE Product_Name = ?");
+            statement.setString(1, name);
+            ResultSet rs = statement.executeQuery();
+            //if return 0 results null, if return at least one, run product loadedProduct line.
+            if(rs.next()) {
+                Product loadedProduct = new Product(rs.getString("Product_Name"), rs.getString("Product_Type"), rs.getInt("Qty"), rs.getDouble("Price"), rs.getInt("Product_ID"));
+                //and return what we recieved from the database
+                return loadedProduct;
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }
