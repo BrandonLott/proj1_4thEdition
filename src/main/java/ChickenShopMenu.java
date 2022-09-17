@@ -1,3 +1,4 @@
+import Model.Product;
 import Service.ProductService;
 import Util.ConnectionUtil;
 
@@ -23,6 +24,9 @@ public class ChickenShopMenu {
                 visitingShop = false;
             }
             else if (answer.equals("Browse")) {
+                for (int i = 0; i < ps.getAllProducts().size(); i++) {
+                    System.out.println(ps.getAllProducts().get(i));
+                }
                 boolean look = true;
                 LOOK:
                 while (look) {
@@ -55,7 +59,7 @@ public class ChickenShopMenu {
                 String Garbage = recieve.nextLine();
                 double price = recieve.nextDouble();
                 int pid = 0;
-                ps.addProduct(name,type,quantity,price,pid);
+                ps.addProduct(pid, name,type,quantity,price);
             }
             else{
 

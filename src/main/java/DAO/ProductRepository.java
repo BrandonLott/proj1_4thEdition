@@ -5,7 +5,12 @@ import Model.Product;
 import Util.ConnectionUtil;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
+
 
 public class ProductRepository {
     //in order to reach the SQL database we need to connect to it using the connection util we have already built
@@ -15,8 +20,22 @@ public class ProductRepository {
         conn = ConnectionUtil.getConnection();
     }
     public List<Product> getAllProducts(){
+        List<Product> allProducts = new ArrayList<>();
+        try{
+            Statement statement = conn.createStatement();
 
-        return null;
+            ResultSet rs = statement.executeQuery("SELECT * FROM LevelUpDB.dbo.Products");
+
+
+            while (rs.next()){
+                Product loadedProduct = new Product(rs.getString("Product_Name"),rs.getString("Product_Type"), rs.getInt("Qty"),  rs.getDouble("Price"),rs.getInt("Product_ID") );
+                allProducts.add(loadedProduct);
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
+        return allProducts ;
     }
     public List<Product> getAllProductByName(String name){
         return null;
