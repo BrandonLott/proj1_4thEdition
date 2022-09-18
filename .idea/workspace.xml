@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="df1c5440-84a3-491d-bc43-2705671f7748" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CustomerRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAO/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/ProductRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Orders.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Service/OrderService.java" afterDir="false" />
     </list>

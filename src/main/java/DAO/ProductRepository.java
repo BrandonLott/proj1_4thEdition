@@ -120,7 +120,7 @@ public class ProductRepository {
             //if return 0 results null, if return at least one, run product loadedProduct line.
             if(rs.next()) {
                 Product loadedProduct = new Product(rs.getString("Product_Name"), rs.getString("Product_Type"), rs.getInt("Qty"), rs.getDouble("Price"), rs.getInt("Product_ID"));
-                //and return what we recieved from the database
+                //and return what we received from the database
                 return loadedProduct;
             }
         }catch(SQLException e){

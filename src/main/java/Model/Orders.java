@@ -11,6 +11,9 @@ public class Orders {
     public Orders() {
     }
 
+    public Orders(String order_date, String customer_id, String ship_address, int product_id, int qty) {
+    }
+
     public int getOrderId() {
         return orderId;
     }

@@ -17,7 +17,6 @@ public class OrderService {
         return or.getAllOrders();
     }
     public Orders getOrdersByID(int orderId) {
-
         return or.getOrdersByID(orderId);
     }
     public List<Orders> getOrdersByCustomerID(int customerId){
