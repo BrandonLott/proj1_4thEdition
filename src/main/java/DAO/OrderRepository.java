@@ -3,10 +3,9 @@ package DAO;
 import Model.Orders;
 import Model.Product;
 import Util.ConnectionUtil;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class OrderRepository {
@@ -16,7 +15,22 @@ public class OrderRepository {
         conn = ConnectionUtil.getConnection();
     }
     public List<Orders> getAllOrders(){
-        return null;
+        List<Orders> allOrders = new ArrayList<>();
+        try{
+            Statement statement = conn.createStatement();
+
+            ResultSet rs = statement.executeQuery("SELECT * FROM LevelUpDB.dbo.Orders");
+
+
+            while (rs.next()){
+                Orders loadedOrder = new Orders(rs.getString("Order_Date"), rs.getString("Customer_ID"), rs.getString("Ship_Address"), rs.getInt("Product_ID"), rs.getInt("Qty"));
+                allOrders.add(loadedOrder);
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
+        return allOrders;
     }
     public Orders getOrdersByID(int orderId){
         try{
@@ -25,7 +39,7 @@ public class OrderRepository {
             ResultSet rs = statement.executeQuery();
             if(rs.next()) {
                Orders loadedOrder = new Orders(rs.getString("Order_Date"), rs.getString("Customer_ID"), rs.getString("Ship_Address"), rs.getInt("Product_ID"), rs.getInt("Qty"));
-                //and return what we recieved from the database
+                //and return what we received from the database
                 return loadedOrder;
             }
         }catch(SQLException e){
@@ -35,15 +49,87 @@ public class OrderRepository {
     }
 
     public List<Orders> getOrdersByCustomerID(int customerId){
-        return null;
+        List<Orders> allOrders = new ArrayList<>();
+        try{
+            PreparedStatement statement = conn.prepareStatement("SELECT * FROM LevelUpDB.dbo.Orders WHERE Customer_ID = ?");
+            statement.setString(1, String.valueOf(customerId));
+
+            ResultSet rs = statement.executeQuery();
+
+            while (rs.next()){
+                Orders loadedOrders = new Orders(rs.getString("Order_Date"), rs.getString("Customer_ID"), rs.getString("Ship_Address"), rs.getInt("Product_ID"), rs.getInt("Qty"));
+                allOrders.add(loadedOrders);
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        if (allOrders.size() == 0){
+            return null;
+        }else {
+            return allOrders;
+        }
     }
     public List<Orders> getOrdersByOrderDate(String date){
-        return null;
+        List<Orders> allOrders = new ArrayList<>();
+        try{
+            PreparedStatement statement = conn.prepareStatement("SELECT * FROM LevelUpDB.dbo.Orders WHERE Order_Date = ?");
+            statement.setString(1, String.valueOf(date));
+
+            ResultSet rs = statement.executeQuery();
+
+            while (rs.next()){
+                Orders loadedOrders = new Orders(rs.getString("Order_Date"), rs.getString("Customer_ID"), rs.getString("Ship_Address"), rs.getInt("Product_ID"), rs.getInt("Qty"));
+                allOrders.add(loadedOrders);
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        if (allOrders.size() == 0){
+            return null;
+        }else {
+            return allOrders;
+        }
     }
     public List<Orders> getOrdersByShippingAddress(String address){
-        return null;
+        List<Orders> allOrders = new ArrayList<>();
+        try{
+            PreparedStatement statement = conn.prepareStatement("SELECT * FROM LevelUpDB.dbo.Orders WHERE Ship_Address = ?");
+            statement.setString(1, String.valueOf(address));
+
+            ResultSet rs = statement.executeQuery();
+
+            while (rs.next()){
+                Orders loadedOrders = new Orders(rs.getString("Order_Date"), rs.getString("Customer_ID"), rs.getString("Ship_Address"), rs.getInt("Product_ID"), rs.getInt("Qty"));
+                allOrders.add(loadedOrders);
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        if (allOrders.size() == 0){
+            return null;
+        }else {
+            return allOrders;
+        }
     }
     public List<Orders> getOrdersByProductID(int productId){
-        return null;
+        List<Orders> allOrders = new ArrayList<>();
+        try{
+            PreparedStatement statement = conn.prepareStatement("SELECT * FROM LevelUpDB.dbo.Orders WHERE Product_ID = ?");
+            statement.setString(1, String.valueOf(productId));
+
+            ResultSet rs = statement.executeQuery();
+
+            while (rs.next()){
+                Orders loadedOrders = new Orders(rs.getString("Order_Date"), rs.getString("Customer_ID"), rs.getString("Ship_Address"), rs.getInt("Product_ID"), rs.getInt("Qty"));
+                allOrders.add(loadedOrders);
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        if (allOrders.size() == 0){
+            return null;
+        }else {
+            return allOrders;
+        }
     }
 }
