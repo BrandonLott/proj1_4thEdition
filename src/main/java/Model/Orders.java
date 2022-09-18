@@ -8,6 +8,9 @@ public class Orders {
     private int productId;
     private int Qty;
 
+    public Orders() {
+    }
+
     public int getOrderId() {
         return orderId;
     }

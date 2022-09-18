@@ -15,6 +15,10 @@ public class Customer {
         Phone = phone;
     }
 
+    public Customer() {
+
+    }
+
     public int getCustomerID() {
         return customerID;
     }
