@@ -1,5 +1,6 @@
 package DAO;
 
+import Model.Customer;
 import Model.Orders;
 import Model.Product;
 import Util.ConnectionUtil;
@@ -47,7 +48,6 @@ public class OrderRepository {
         }
         return null;
     }
-
     public List<Orders> getOrdersByCustomerID(int customerId){
         List<Orders> allOrders = new ArrayList<>();
         try{
@@ -131,5 +131,21 @@ public class OrderRepository {
         }else {
             return allOrders;
         }
+    }
+    public void addOrder(Orders o) {
+        List<Orders> order = new ArrayList<>();
+        try{
+            PreparedStatement statement = conn.prepareStatement("INSERT INTO LevelUpDB.dbo.Orders( Order_Date, Customer_ID, Ship_Address, Product_ID, Qty)VALUES(?,?,?,?,?)");
+
+            statement.setString(1,o.getDate());
+            statement.setInt(2,o.getCustomerId());
+            statement.setString(3,o.getAddress());
+            statement.setInt(4,o.getProductId());
+            statement.setInt(5,o.getQty());
+            statement.executeUpdate();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+
     }
 }

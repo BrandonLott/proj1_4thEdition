@@ -31,5 +31,14 @@ public class OrderService {
     public List<Orders> getOrdersByProductID(int productId){
         return or.getOrdersByProductID(productId);
     }
+    public void addOrder(Orders o){
+
+        Orders existingOrder = or.getOrdersByID(o.getOrderId()) ;
+
+        if(existingOrder == null) {
+            Orders newOrder = new Orders(o.getDate(), o.getCustomerId(), o.getAddress(), o.getProductId(), o.getQty());
+            or.addOrder(newOrder);
+        }
+    }
 }
 

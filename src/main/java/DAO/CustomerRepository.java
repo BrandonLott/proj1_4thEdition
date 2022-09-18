@@ -2,6 +2,7 @@ package DAO;
 
 import Model.Customer;
 import Model.Orders;
+import Model.Product;
 import Util.ConnectionUtil;
 
 import java.sql.Connection;
@@ -114,6 +115,22 @@ public class CustomerRepository {
         }else {
             return allCustomers;
         }
+    }
+
+    public void addCustomer(Customer c) {
+        List<Product> product = new ArrayList<>();
+        try{
+            PreparedStatement statement = conn.prepareStatement("INSERT INTO LevelUpDB.dbo.Customers( Last_Name, First_Name, Address, Phone)VALUES(?,?,?,?)");
+
+            statement.setString(1,c.getLastName());
+            statement.setString(2,c.getFirstName());
+            statement.setString(3,c.getAddress());
+            statement.setString(4, c.getPhone());
+            statement.executeUpdate();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+
     }
 
 }

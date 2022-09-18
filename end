@@ -1,0 +1,59 @@
+[33mcommit 64442044bb716d30dc85640a2dc1af4c6ad8b289[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: BrandonLott <brandon425@revature.net>
+Date:   Sun Sep 18 08:11:21 2022 -0400
+
+    Made changes to OrderRepo and completed Cust.Repo.
+
+[33mcommit 832488d449e2a9c28d1d76dede4048841f6f5e03[m
+Author: BrandonLott <brandon425@revature.net>
+Date:   Sun Sep 18 07:28:19 2022 -0400
+
+    Completed OrderRespository
+
+[33mcommit ea621732924f3bc770501836cc50d2e3fe8c85d3[m
+Author: BrandonLott <brandon425@revature.net>
+Date:   Sat Sep 17 23:09:41 2022 -0400
+
+    developing orders repository
+
+[33mcommit 08c7c7975537c83eb913d3e6e19407299e9dce13[m
+Author: BrandonLott <brandon425@revature.net>
+Date:   Sat Sep 17 22:37:33 2022 -0400
+
+    Getting all my functionality mapped out, all thats left is to fill in SQL statements
+
+[33mcommit f183b2826af1dc72beb7db089508f545a95f28b7[m
+Author: BrandonLott <brandon425@revature.net>
+Date:   Sat Sep 17 18:15:32 2022 -0400
+
+    working API, building out functionality
+
+[33mcommit 3eb7b71909b9036eddc01222025a32616c10e94c[m
+Author: BrandonLott <brandon425@revature.net>
+Date:   Sat Sep 17 12:47:51 2022 -0400
+
+    IT'S Connected, filling and testing all functions
+
+[33mcommit 88372782d7610b9959975c1455709a8b455c40dc[m
+Author: BrandonLott <brandon425@revature.net>
+Date:   Sat Sep 17 10:16:20 2022 -0400
+
+    funcionally got object passed
+
+[33mcommit 894f165ad397aab59f5709a08b1cc3d4bf2765e8[m
+Author: BrandonLott <brandon425@revature.net>
+Date:   Fri Sep 16 22:08:33 2022 -0400
+
+    making progress with JDBC setup
+
+[33mcommit d1ae5c5a9a27a9a40a12c10ff1f617a5dc44a932[m
+Author: BrandonLott <brandon425@revature.net>
+Date:   Fri Sep 16 21:33:41 2022 -0400
+
+    SQL txt file added under resources
+
+[33mcommit 247eec73424a96c434c5f1f747b006d7f5428388[m
+Author: BrandonLott <brandon425@revature.net>
+Date:   Fri Sep 16 21:26:36 2022 -0400
+
+    inital Layout of Shop

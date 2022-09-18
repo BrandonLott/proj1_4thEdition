@@ -19,6 +19,9 @@ public class Customer {
 
     }
 
+    public Customer(String lastName, String firstName, int customerID, String address, String phone) {
+    }
+
     public int getCustomerID() {
         return customerID;
     }
