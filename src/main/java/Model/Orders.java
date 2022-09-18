@@ -11,7 +11,8 @@ public class Orders {
     public Orders() {
     }
 
-    public Orders(String order_date, String customer_id, String ship_address, int product_id, int qty) {
+
+    public Orders(String order_date, int customer_id, String ship_address, int product_id, int qty) {
     }
 
     public int getOrderId() {

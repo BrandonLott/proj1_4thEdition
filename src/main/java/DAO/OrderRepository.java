@@ -23,7 +23,7 @@ public class OrderRepository {
 
 
             while (rs.next()){
-                Orders loadedOrder = new Orders(rs.getString("Order_Date"), rs.getString("Customer_ID"), rs.getString("Ship_Address"), rs.getInt("Product_ID"), rs.getInt("Qty"));
+                Orders loadedOrder = new Orders(rs.getString("Order_Date"), rs.getInt("Customer_ID"), rs.getString("Ship_Address"), rs.getInt("Product_ID"), rs.getInt("Qty"));
                 allOrders.add(loadedOrder);
             }
         }catch (SQLException e){
@@ -38,7 +38,7 @@ public class OrderRepository {
             statement.setInt(1, orderId);
             ResultSet rs = statement.executeQuery();
             if(rs.next()) {
-               Orders loadedOrder = new Orders(rs.getString("Order_Date"), rs.getString("Customer_ID"), rs.getString("Ship_Address"), rs.getInt("Product_ID"), rs.getInt("Qty"));
+               Orders loadedOrder = new Orders(rs.getString("Order_Date"), rs.getInt("Customer_ID"), rs.getString("Ship_Address"), rs.getInt("Product_ID"), rs.getInt("Qty"));
                 //and return what we received from the database
                 return loadedOrder;
             }
@@ -57,7 +57,7 @@ public class OrderRepository {
             ResultSet rs = statement.executeQuery();
 
             while (rs.next()){
-                Orders loadedOrders = new Orders(rs.getString("Order_Date"), rs.getString("Customer_ID"), rs.getString("Ship_Address"), rs.getInt("Product_ID"), rs.getInt("Qty"));
+                Orders loadedOrders = new Orders(rs.getString("Order_Date"), rs.getInt("Customer_ID"), rs.getString("Ship_Address"), rs.getInt("Product_ID"), rs.getInt("Qty"));
                 allOrders.add(loadedOrders);
             }
         }catch (SQLException e){
@@ -78,7 +78,7 @@ public class OrderRepository {
             ResultSet rs = statement.executeQuery();
 
             while (rs.next()){
-                Orders loadedOrders = new Orders(rs.getString("Order_Date"), rs.getString("Customer_ID"), rs.getString("Ship_Address"), rs.getInt("Product_ID"), rs.getInt("Qty"));
+                Orders loadedOrders = new Orders(rs.getString("Order_Date"), rs.getInt("Customer_ID"), rs.getString("Ship_Address"), rs.getInt("Product_ID"), rs.getInt("Qty"));
                 allOrders.add(loadedOrders);
             }
         }catch (SQLException e){
@@ -99,7 +99,7 @@ public class OrderRepository {
             ResultSet rs = statement.executeQuery();
 
             while (rs.next()){
-                Orders loadedOrders = new Orders(rs.getString("Order_Date"), rs.getString("Customer_ID"), rs.getString("Ship_Address"), rs.getInt("Product_ID"), rs.getInt("Qty"));
+                Orders loadedOrders = new Orders(rs.getString("Order_Date"), rs.getInt("Customer_ID"), rs.getString("Ship_Address"), rs.getInt("Product_ID"), rs.getInt("Qty"));
                 allOrders.add(loadedOrders);
             }
         }catch (SQLException e){
@@ -120,7 +120,7 @@ public class OrderRepository {
             ResultSet rs = statement.executeQuery();
 
             while (rs.next()){
-                Orders loadedOrders = new Orders(rs.getString("Order_Date"), rs.getString("Customer_ID"), rs.getString("Ship_Address"), rs.getInt("Product_ID"), rs.getInt("Qty"));
+                Orders loadedOrders = new Orders(rs.getString("Order_Date"), rs.getInt("Customer_ID"), rs.getString("Ship_Address"), rs.getInt("Product_ID"), rs.getInt("Qty"));
                 allOrders.add(loadedOrders);
             }
         }catch (SQLException e){
