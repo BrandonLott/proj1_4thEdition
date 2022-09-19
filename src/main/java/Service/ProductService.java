@@ -52,5 +52,10 @@ public class ProductService {
 
         return pr.getProductByID(pid);
     }
+    public void deleteProductByName(String name){
+        name = name.replaceAll("_"," ");
+        pr.deleteProductByName(name);
+        }
+    }
 
-}
+

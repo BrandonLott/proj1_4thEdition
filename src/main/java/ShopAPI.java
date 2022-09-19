@@ -25,12 +25,13 @@ public class ShopAPI {
 
         //App.get refers to what. /name of thing/{parameter}                                   String into an Int
         app.get("/Product/{pid}", ctx -> ctx.json(ps.getProductByID(Integer.parseInt(ctx.pathParam("pid")))));
-        app.get("/Product/{name}", ctx -> ctx.json(ps.getAllProductByName("name")));
-        app.get("/Product/{price}", ctx -> ctx.json(ps.getAllProductByPrice(Double.parseDouble("price"))));
+        app.get("/Product/byName/{name}", ctx -> ctx.json(ps.getAllProductByName(ctx.pathParam("name"))));
+        app.get("/Product/byPrice/{price}", ctx -> ctx.json(ps.getAllProductByPrice(Double.parseDouble(ctx.pathParam("price")))));
+        app.delete("/Product/{name}", ctx -> ps.deleteProductByName(ctx.pathParam("name")));
 
-        app.get("/Customers/{lastName}", ctx -> ctx.json(cs.getAllCustomersByLastName("lastName")));
-        app.get("/Customers/{firstName}", ctx -> ctx.json(cs.getAllCustomersByFirstName("firstName")));
-        app.get("/Customers/{address}", ctx -> ctx.json(cs.getAllCustomersByAddress("address")));
+        app.get("/Customers/byLast/{lastName}", ctx -> ctx.json(cs.getAllCustomersByLastName(ctx.pathParam("lastName"))));
+        app.get("/Customers/byFirst/{firstName}", ctx -> ctx.json(cs.getAllCustomersByFirstName(ctx.pathParam("firstName"))));
+        app.get("/Customers/byAddress{address}", ctx -> ctx.json(cs.getAllCustomersByAddress(ctx.pathParam("address"))));
 
 
         app.post("/Product/", ctx -> {

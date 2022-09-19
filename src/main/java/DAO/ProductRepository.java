@@ -145,5 +145,16 @@ public class ProductRepository {
         }
         return null;
     }
+    public void deleteProductByName(String name) {
+        try {
+            PreparedStatement statement = conn.prepareStatement("DELETE FROM LevelUpDB.dbo.Products WHERE Product_Name = ?");
+            statement.setString(1, name);
+            statement.executeUpdate();
 
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+    }
 }

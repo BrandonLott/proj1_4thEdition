@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df1c5440-84a3-491d-bc43-2705671f7748" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/3/63acfa6274494b35d25699e002cc42518ccf5507" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/3/63acfa6274494b35d25699e002cc42518ccf5507" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ChickenShopMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ChickenShopMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CustomerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Service/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Service/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ShopAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ShopAPI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
