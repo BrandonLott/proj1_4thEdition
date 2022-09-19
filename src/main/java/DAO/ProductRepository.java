@@ -157,4 +157,24 @@ public class ProductRepository {
 
 
     }
-}
+
+    public void updateProductByName(String name, Product product) {
+        try {
+            PreparedStatement statement = conn.prepareStatement("UPDATE LevelUpDB.dbo.Products SET Product_Type = ?, Product_Name = ?, Qty = ?, Price = ?  WHERE Product_Name = ?");
+            statement.setString(1, product.getType());
+            statement.setString(2, product.getName());
+            statement.setInt(3, product.getQuantity());
+            statement.setDouble(4, product.getPrice());
+            statement.setString(5, name);
+
+            statement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    }
+

@@ -56,6 +56,11 @@ public class ProductService {
         name = name.replaceAll("_"," ");
         pr.deleteProductByName(name);
         }
+
+    public void updateProductByName(String name, Product product) {
+        name = name.replaceAll("_"," ");
+        pr.updateProductByName(name,product);
     }
+}
 
 

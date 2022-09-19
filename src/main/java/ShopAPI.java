@@ -33,6 +33,12 @@ public class ShopAPI {
         app.get("/Customers/byFirst/{firstName}", ctx -> ctx.json(cs.getAllCustomersByFirstName(ctx.pathParam("firstName"))));
         app.get("/Customers/byAddress{address}", ctx -> ctx.json(cs.getAllCustomersByAddress(ctx.pathParam("address"))));
 
+        app.put("/Product/byName/{name}", ctx -> {
+            ObjectMapper mapper = new ObjectMapper();
+            Product product = mapper.readValue(ctx.body(), Product.class);
+            ps.updateProductByName(ctx.pathParam("name"),product);
+        });
+
 
         app.post("/Product/", ctx -> {
             ObjectMapper mapper = new ObjectMapper();
